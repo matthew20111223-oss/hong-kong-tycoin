@@ -6,7 +6,7 @@ const crypto = require("crypto");
 const app = express();
 const server = http.createServer(app);
 const io = new Server(server, { cors: { origin: "*" } });
-app.use(express.static("public"));
+app.use(express.static(__dirname));
 app.get("/health", (_, res) => res.json({ ok: true, game: "Hong Kong Tycoon" }));
 
 const PORT = process.env.PORT || 3000;
