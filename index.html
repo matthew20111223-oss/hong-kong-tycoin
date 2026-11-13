@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="theme-color" content="#071713"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>HONG KONG TYCOON</title><link rel="manifest" href="/manifest.json"><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="ambient"></div>
+<header><div class="brandmark">HK<span>◆</span></div><div><div class="eyebrow">THE CITY IS YOURS</div><h1>HONG KONG <em>TYCOON</em></h1></div><div class="online"><i></i> LIVE</div></header>
+<main>
+<section id="lobby" class="panel lobby">
+  <div class="hero"><div class="eyebrow">A CITY. A THOUSAND POSSIBILITIES.</div><h2>建立你的<br><em>地產王國。</em></h2><p>由旺角到維港，買下整座城市。</p></div>
+  <div class="entry">
+    <label>你的玩家名稱</label><input id="playerName" maxlength="16" placeholder="輸入名稱" value="玩家 01">
+    <button class="primary" id="create">＋ 建立新房間</button>
+    <div class="or"><span>或加入朋友的遊戲</span></div>
+    <div class="joinrow"><input id="roomCode" maxlength="6" placeholder="輸入 6 位房間碼"><button id="join" class="secondary">加入</button></div>
+    <p class="hint">每個房間支援 2–20 位玩家。建立房間後，把房間碼分享給朋友。</p>
+  </div>
+</section>
+<section id="game" class="hidden">
+  <div class="gamebar"><div><div class="eyebrow">PRIVATE TABLE</div><strong>房間 <span id="codeText">------</span></strong></div><button id="copyCode" class="smallbtn">複製房間碼</button><div class="turnpill" id="turnLabel">等待玩家</div></div>
+  <div class="layout">
+    <div class="boardwrap"><div class="board" id="board"><div class="boardcenter"><div class="crest">HK<span>◆</span></div><div class="centername">HONG KONG<br><b>TYCOON</b></div><div class="centerline"></div><div class="centersub">PROPERTY · POWER · PRESTIGE</div><div class="dice" id="dice">⚄ ⚅</div><div id="rollHint" class="rollhint">等待遊戲開始</div></div></div></div>
+    <aside class="side">
+      <div class="card"><div class="cardhead"><span>PLAYERS</span><span id="playerCount">0 / 20</span></div><div id="players" class="players"></div><button id="start" class="primary hidden">開始遊戲</button></div>
+      <div class="card actioncard"><div class="cardhead"><span>YOUR MOVE</span><span class="turntag">GAME ACTION</span></div><div id="actionText">等待房主開始遊戲</div><div class="actions"><button id="roll" class="primary" disabled>擲骰子　⚄</button><button id="buy" class="secondary hidden">購買地產</button><button id="decline" class="ghost hidden">暫不購買</button><button id="build" class="secondary hidden">興建房屋 $100</button><button id="end" class="ghost" disabled>結束回合 →</button></div></div>
+      <div class="card"><div class="cardhead"><span>CITY FEED</span><span class="live">● LIVE</span></div><div id="feed" class="feed"></div></div>
+    </aside>
+  </div>
+  <div class="footer">HONG KONG TYCOON <span>•</span> THE CITY NEVER SLEEPS</div>
+</section>
+<div id="toast" class="toast"></div>
+</main>
+<script src="/socket.io/socket.io.js"></script><script src="/app.js"></script>
+</body></html>
